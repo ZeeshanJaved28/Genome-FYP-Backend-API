@@ -1,0 +1,175 @@
+body {
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  margin: 1rem;
+}
+
+.container {
+  max-width: 1500px; /* Thoda kam width for the form container */
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8); /* Halka transparent white background */
+  border-radius: 2rem; /* More rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+  border: none; /* Remove default border */
+  margin-bottom: -50px;
+  overflow: hidden; /* For rounded corners of header */
+}
+
+.card-header {
+  background-color: #007bff96; /* Blue background for the header */
+  color: white;
+  border-radius: 15px 15px 0 0; /* Rounded corners for top of header */
+  padding: 1px;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  text-align: center; /* Center the header text */
+}
+
+.card-header h3 {
+  margin-bottom: 20px;
+  font-size: 1.75rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Thoda kam gap */
+  padding: 50px 50px 50px 50px;
+}
+
+.mb-3 {
+  margin-bottom: 1rem; /* Adjusted margin */
+  display: flex; /* Make mb-3 a flex container */
+  justify-content: center; /* Center content horizontally */
+  flex-direction: column; /* Stack label and input */
+  align-items: center; /* Center items horizontally */
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem; /* Adjusted margin */
+  font-weight: bold;
+  color: #007bff96;
+  font-size: 1.2rem;
+  text-align: center; /* Center the label text */
+}
+
+.form-control {
+  display: block;
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #34495e;
+  background-color: #f8f9fa; /* Light grey background for input */
+  background-clip: padding-box;
+  border: 1px solid #ceceda;
+  border-radius: 0.3rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-weight: bold;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff96; /* Blue background for the header */
+  border-color: #007bff96; /* Blue background for the header */
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  margin-top: 2rem; /* Add some space above the button */
+  font-weight: bold;
+  margin-bottom: -2rem;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
+
+#preview-section {
+  margin-top: 3rem;
+  text-align: center;
+  background-color: #ffffff; /* Light background for preview section */
+  padding: 20px;
+  border-radius: 0.5rem;
+  border: 1px solid #007bff96;
+}
+
+#preview-section h4 {
+  margin-bottom: 1.5rem;
+  color: #007bff96;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+#data-table-container {
+  overflow-x: auto; /* Keep horizontal scroll */
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  width: 100%; /* Ensure container takes full width */
+}
+
+#data-table-container table {
+  width: auto; /* Table takes width based on content */
+  border-collapse: collapse;
+}
+
+#data-table-container th,
+#data-table-container td {
+  border: 1px solid #007bff96;
+  padding: 0.75rem;
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping in cells */
+  background-color: #e1ebff;
+  color: #34495e;
+  font-weight: bold;
+}
+
+#data-table-container th {
+  background-color: #007bff96;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #007bff96; /* Blue background for the header */
+  border-color: #007bff96; /* Blue background for the header */
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.btn-success:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
+
+#error-message {
+  margin-top: 1.5rem;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  text-align: center;
+}

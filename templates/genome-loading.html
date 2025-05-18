@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waiting...</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/genome-loading.css') }}"
+    />
+  </head>
+  <body>
+    <section class="bg"></section>
+    <div class="loading-container">
+      <img
+        class="gene-loader-img"
+        src="{{ url_for('static', filename='images/Gene.gif') }}"
+        alt="Loading Gene"
+      />
+    </div>
+    <div class="loading-text">0%</div>
+    <div class="initializing-text">
+      Initializing Genetic App
+      <span class="loader"></span>
+    </div>
+
+    <script>
+      const bg = document.querySelector(".bg");
+      const loadText = document.querySelector(".loading-text");
+      const geneImg = document.querySelector(".gene-loader-img"); // Get the gene image element
+      const initializingText = document.querySelector(".initializing-text"); // Get the initializing text element
+      const loader = document.querySelector(".loader"); // Get the loader element
+
+      let load = 0;
+      let int = setInterval(blurring, 30);
+
+      function blurring() {
+        load++;
+        if (load > 99) {
+          clearInterval(int);
+          // Trigger CSS transitions
+          bg.style.filter = "blur(0px)";
+          loadText.style.opacity = 0;
+          geneImg.style.opacity = 0;
+          initializingText.style.opacity = 0; // Fade out initializing text as well
+
+          // Redirect immediately after triggering transitions
+          window.location.href = "/dashboard";
+        }
+        loadText.innerText = `${load}%`;
+        loadText.style.opacity = scale(load, 0, 100, 1, 0);
+        bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+        geneImg.style.opacity = scale(load, 0, 100, 1, 0); // Scale gene image opacity as well
+        initializingText.style.opacity = scale(load, 0, 100, 1, 0); // Scale initializing text opacity
+        loader.style.opacity = scale(load, 0, 100, 1, 0); // Scale loader opacity
+      }
+
+      const scale = (num, in_min, in_max, out_min, out_max) => {
+        return (
+          ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+        );
+      };
+    </script>
+  </body>
+</html>

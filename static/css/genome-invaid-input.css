@@ -1,0 +1,55 @@
+body {
+  background: url("../images/bg-error.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%; /* Change this line */
+  background-position: center;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.error-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  max-width: 400px; /* Adjust as needed */
+  width: 90%; /* Make it responsive */
+  border-left: none; /* Remove the left border */
+  margin-bottom: -50px;
+}
+h1 {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-size: 100% 100%; /* Change this line in media query as well */
+  }
+  .error-box {
+    max-width: 90%;
+    padding: 20px;
+    margin: 0 auto; /* Remove fixed top/bottom margin for better centering */
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Yeh styles sirf un screens par apply honge jinki width 768 pixels se 991 pixels tak hai (e.g., tablets) */
+  body {
+    background-size: 100% 100%;
+  }
+  .error-box {
+    max-width: 70%;
+    padding: 25px;
+    margin: 0 auto; /* Remove fixed top/bottom margin for better centering */
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+}

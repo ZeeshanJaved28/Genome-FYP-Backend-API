@@ -1,0 +1,190 @@
+body {
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem; /* Add margin around the body */
+}
+
+.card {
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding-top: 3rem; /* Adjusted top padding */
+  padding-right: 1.5rem; /* Adjusted padding */
+  padding-bottom: 1.5rem; /* Adjusted padding */
+  padding-left: 1.5rem; /* Adjusted padding */
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left; /* Changed to left align for form content */
+  max-width: 90%; /* Increased max-width to reduce the gap */
+  width: auto; /* Changed width to auto to respect max-width */
+  position: relative; /* For positioning the separator and heading */
+}
+
+h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007bff96; /* Blue background for the header */
+  color: #fff; /* White text color */
+  padding: 1rem 1.5rem;
+  border-top-left-radius: 2rem; /* Match card border-radius */
+  border-top-right-radius: 2rem; /* Match card border-radius */
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 1.5rem; /* Space below the header */
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  transform: translateX(0); /* Remove horizontal centering */
+}
+
+form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Limit form width */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 0.75rem; /* Adjusted margin */
+  align-items: center;
+}
+
+.col-md-6 {
+  width: 47%; /* Adjusted width for potential gap */
+  display: flex;
+  align-items: center;
+  margin-right: 2%; /* Add some right margin for gap */
+}
+
+.col-md-6:nth-child(even) {
+  margin-right: 0; /* Remove right margin for the second column */
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem !important; /* Adjusted margin */
+  display: flex;
+  align-items: center;
+}
+
+label {
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 0.25rem;
+  display: block;
+  width: 100%; /* Full width label */
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+input.form-control,
+select.form-select {
+  border-radius: 8px;
+  height: 44px;
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%; /* Full width input */
+  display: block;
+  margin-bottom: 0.5rem; /* Add some bottom margin to inputs */
+}
+
+.separator {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  width: 1px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+  z-index: 5; /* Ensure it's below the heading */
+  display: none; /* Hide the separator in this layout */
+}
+
+.btn.btn-success {
+  background-color: #007bff96 !important;
+  color: white !important;
+  padding: 12px 35px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s ease;
+  width: 60%; /* Set button width */
+  margin-top: 2rem;
+  text-align: center;
+  align-self: center; /* Ensure button is centered within the card */
+}
+
+.btn.btn-success:hover {
+  background-color: #0056b3 !important;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding-top: 2.5rem; /* Adjust top padding for smaller screens */
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    margin: 0.5rem; /* Add margin for smaller screens */
+  }
+  h2 {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-top-left-radius: 1rem; /* Adjust for smaller cards */
+    border-top-right-radius: 1rem; /* Adjust for smaller cards */
+  }
+  form {
+    margin-top: 1rem;
+  }
+  .col-md-6 {
+    width: 100%;
+    margin-right: 0; /* Remove right margin on smaller screens */
+  }
+  .btn.btn-success {
+    display: block; /* Keep block for smaller screens if full width is desired */
+    width: 100%;
+    font-size: 1.5vh;
+    padding: 1vh 2vh;
+    border-radius: 0.9vh;
+    margin-top: 1vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    padding-top: 2rem; /* Adjust top padding for even smaller screens */
+    padding-right: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    margin: 0.25rem; /* Add margin for even smaller screens */
+  }
+  h2 {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+    border-top-left-radius: 0.5rem; /* Adjust for even smaller cards */
+    border-top-right-radius: 0.5rem; /* Adjust for even smaller cards */
+  }
+  form {
+    margin-top: 0.75rem;
+  }
+  .btn.btn-success {
+    display: block; /* Keep block for even smaller screens if full width is desired */
+    width: 100%;
+    font-size: 1.7vh;
+    padding: 1.2vh 2.2vh;
+    border-radius: 1vh;
+    margin-top: 1.2vh;
+  }
+}

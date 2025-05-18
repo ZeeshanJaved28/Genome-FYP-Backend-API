@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Genome Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/genome-patient-info-form-style.css') }}"
+    />
+  </head>
+  <body>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="min-height: 100vh"
+    >
+      <div class="card">
+        <h2 class="mb-0 center">Genome Patient Information Form</h2>
+        <form method="POST">
+          {{ form_fields|safe }}
+          <button class="btn btn-success mt-3" type="submit">Detect Now</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

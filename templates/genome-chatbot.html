@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genome Disorder Chatbot</title>
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+     <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/genome-chatbot.css') }}"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+</head>
+<body>
+    <div class="chatbot-popup show-chatbot">
+        <div class="chat-header">
+            <div class="header-info">
+                <img class="chatbot-logo" src="/static/images/genebot.gif" alt="Chatbot Logo" width="30" height="30">
+                <h2 class="logo-text">Genome Chatbot</h2>
+            </div>
+        </div>
+
+        <div class="chat-log" id="chat-log">
+            {% for message in chat_history %}
+                {% if message.bot %}
+                    <div class="bot-message">{{ message['bot']|safe }}</div>
+                {% endif %}
+                {% if message.user %}
+                    <div class="user-message">{{ message.user }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <form method="POST" action="/chatbot" class="input-area">
+            <input type="hidden" name="model" value="{{ selected_model }}" />
+            <input
+                type="hidden"
+                name="current_question_index"
+                value="{{ current_question_index }}"
+            />
+            <input
+                type="hidden"
+                name="chat_history"
+                value="{{ chat_history_json }}"
+            />
+            <input
+                type="hidden"
+                name="collected_answers"
+                value="{{ collected_answers_json }}"
+            />
+            <input
+                type="text"
+                name="user_response"
+                id="user-input"
+                placeholder="Message..."
+                required
+                {% if disable_input %}disabled{% endif %}
+            />
+            <button type="submit" id="send-message" class="material-symbols-rounded" {% if disable_input %}style="display: none;"{% endif %}>
+                {% if current_question_index == total_questions - 1 %}
+                    search
+                {% else %}
+                    send
+                {% endif %}
+            </button>
+        </form>
+
+        {% if show_dashboard_button %}
+        <div class="dashboard-button-container">
+            <a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        const chatLog = document.getElementById("chat-log");
+
+        // Keep chat log scrolled to bottom
+        function scrollToBottom() {
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+        scrollToBottom();
+        const chatLogObserver = new MutationObserver(scrollToBottom);
+        chatLogObserver.observe(chatLog, { childList: true, subtree: true });
+    </script>
+</body>
+</html>

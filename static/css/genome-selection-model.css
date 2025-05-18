@@ -1,0 +1,124 @@
+body {
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.card {
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  max-width: 90%;
+  width: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Make form items take full width */
+  margin-bottom: -50px;
+}
+
+h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007bff96;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  transform: translateX(0);
+}
+
+form {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  flex-direction: column; /* Keep items stacked vertically */
+  align-items: center; /* Center items horizontally in the form */
+  margin-top: 2rem;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center; /* Vertically align radio and label */
+  margin-bottom: 0.75rem;
+  width: 50%; /* Adjust width for spacing from edges */
+  margin-top: 0.75rem;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 0.8rem;
+}
+
+.radio-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #34495e;
+  width: 100%; /* Give label more width */
+}
+
+.btn.btn-primary {
+  border-radius: 1.5rem;
+  padding: 0.75rem 2rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  align-self: center;
+  width: auto;
+  background-color: #007bff96; /* Blue background for the header */
+  border-color: #007bff96; /* Blue background for the header */
+  font-weight: bold;
+}
+
+.btn.btn-primary:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+    width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    max-width: 90%;
+    width: 400px;
+  }
+}
+
+@media (max-width: 412px) {
+  .card {
+    max-width: 90%;
+    width: 400px;
+  }
+  .radio-group {
+    width: 60%;
+  }
+
+  .radio-group input[type="radio"] {
+    margin-right: 0.8rem;
+  }
+
+  .radio-group label {
+    width: 95%; /* Give label more width */
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome | Genome Detector</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/genome-dashboard.css') }}"
+    />
+  </head>
+  <body>
+    <div class="intro-card text-center">
+      <h2 class="mb-4">Welcome to Genome Disorder Detector 🧬</h2>
+      <p class="mb-4">Choose your method of input to begin diagnosis:</p>
+      <div class="d-grid gap-2">
+        <a href="/selection-model-form" class="btn btn-primary btn-custom"
+          >📝 Fill a Patient Form</a
+        >
+        <a href="/selection-model-upload" class="btn btn-primary btn-custom"
+          >📂 Upload File (CSV/XLS)</a
+        >
+        <a href="/selection-model-chatbot" class="btn btn-primary btn-custom"
+          >💬 Use Genome Disorder Chatbot</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

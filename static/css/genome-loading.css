@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #f0f0f0; /* Fallback background */
+  flex-direction: column; /* To stack loading text and gene vertically */
+}
+
+.bg {
+  background: url("../images/background.jpg") no-repeat center center/cover
+    fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  filter: blur(30px);
+  transition: filter 0.5s ease-in-out; /* Shorter transition for quicker effect */
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gene-loader-img {
+  width: 200px; /* Adjust size as per your requirement */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px;
+  animation: rotate 2s linear infinite; /* Optional: Rotate the gene */
+  opacity: 1; /* Initially visible */
+  transition: opacity 0.5s ease-in-out; /* Shorter transition */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 50px;
+  color: #fff;
+  opacity: 1; /* Initially visible */
+  transition: opacity 0.5s ease-in-out; /* Shorter transition */
+}
+
+.initializing-text {
+  font-size: 20px;
+  color: #fff;
+  opacity: 1;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+  display: flex; /* To align text and loader */
+  align-items: center;
+}
+
+/* HTML: <span class="loader"></span> */
+.loader {
+  width: 50px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side, #ffffff 90%, #0000) 0 /
+    calc(100% / 3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+  margin-left: 10px; /* Add some space between text and loader */
+}
+
+@keyframes l1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
+  }
+}

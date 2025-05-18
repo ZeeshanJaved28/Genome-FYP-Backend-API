@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Invalid Input</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/genome-invaid-input.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="/static/css/genome-invaid-input.css"> -->
+  </head>
+  <body>
+    <div class="error-box text-center">
+      <h1>Invalid Input!</h1>
+      <p style="color: rgb(221, 107, 107)"><b>{{ error_message }}</b></p>
+      <a href="/dashboard" class="btn btn-outline-danger mt-3">Back</a>
+    </div>
+  </body>
+</html>
