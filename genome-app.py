@@ -10,42 +10,10 @@ import os
 
 app = Flask(__name__)
 
-# Define the directory to store models
-MODEL_DIR = "models"
-os.makedirs(MODEL_DIR, exist_ok=True)
-
-# Google Drive file IDs (replace with your actual file IDs)
-MODEL_URLS = {
-    "Genetic_Disorder_Stacked_Model.pkl": "https://drive.google.com/file/d/1-GBC7LW-Ofo-jf6Wp4noND0ysp3VrDpv/view?usp=drive_link",
-    "Disorder_Subclass_Stacked_Model.pkl": "https://drive.google.com/file/d/1QlOlig0zDFIXdGixzctuBwUWjJx5K7Tk/view?usp=drive_link",
-    "Combined_Genome_Disorder_Stacked_Model.pkl": "https://drive.google.com/file/d/1o_34CvFxlsH3Y03D0sYHWpPCVqOwAfWp/view?usp=drive_link",
-}
-
-# Download models if they don't exist locally
-def download_models():
-    for model_name, url in MODEL_URLS.items():
-        model_path = os.path.join(MODEL_DIR, model_name)
-        if not os.path.exists(model_path):
-            print(f"Downloading {model_name} from Google Drive...")
-            gdown.download(url, model_path, quiet=False)
-        else:
-            print(f"{model_name} already exists locally.")
-
-# Load your trained models
-def load_models():
-    download_models()
-    genetic_disorder_model = joblib.load(os.path.join(MODEL_DIR, "Genetic_Disorder_Stacked_Model.pkl"))
-    disorder_subclass_model = joblib.load(os.path.join(MODEL_DIR, "Disorder_Subclass_Stacked_Model.pkl"))
-    combined_disorder_model = joblib.load(os.path.join(MODEL_DIR, "Combined_Genome_Disorder_Stacked_Model.pkl"))
-    return genetic_disorder_model, disorder_subclass_model, combined_disorder_model
-
-# Load models at startup
-genetic_disorder_model, disorder_subclass_model, combined_disorder_model = load_models()
-
 # Load your trained models (replace with your actual paths)
-# genetic_disorder_model = joblib.load('models\\Genetic_Disorder_Stacked_Model.pkl')
-# disorder_subclass_model = joblib.load('models\\Disorder_Subclass_Stacked_Model.pkl')
-# combined_disorder_model = joblib.load('models\\Combined_Genome_Disorder_Stacked_Model.pkl')
+genetic_disorder_model = joblib.load('models\\Genetic_Disorder_Stacked_Model.pkl')
+disorder_subclass_model = joblib.load('models\\Disorder_Subclass_Stacked_Model.pkl')
+combined_disorder_model = joblib.load('models\\Combined_Genome_Disorder_Stacked_Model.pkl')
 
 # Features lists for each model (in the order they were trained)
 features_genetic = [
