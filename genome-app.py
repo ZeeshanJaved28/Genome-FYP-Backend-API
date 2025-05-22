@@ -477,8 +477,8 @@ def chatbot_start(selected_model):
         return "Invalid model selected."
     
 questions_genetic = [
-    "Please enter Blood cell count (mcL):",
-    "Please enter White Blood cell count (thousand per microliter):",
+    "Please enter Blood cell count (mcL) [4.2998825 - 5.497859656]:",
+    "Please enter White Blood cell count (thousand per microliter) [3.0 - 12.0]:",
     "Please enter Patient Age:",
     "Please enter Father's age:",
     "Please enter Mother's age:",
@@ -507,8 +507,8 @@ questions_genetic = [
 
 # Questions and conversational prompts for chatbot
 questions = [
-    "Please enter Blood cell count (mcL):",
-    "Please enter White Blood cell count (thousand per microliter):",
+    "Please enter Blood cell count (mcL) [4.2998825 - 5.497859656]:",
+    "Please enter White Blood cell count (thousand per microliter) [3.0 - 12.0]:",
     "Please enter Patient Age:",
     "Please enter Father's age:",
     "Please enter Mother's age:",
