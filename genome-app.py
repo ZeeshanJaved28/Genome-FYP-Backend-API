@@ -302,10 +302,18 @@ def detect(choice):
                 options += f'<option value="{human_val}">{human_val}</option>'
             form_fields += f'<div class="{col_class}"><label for="{feature}">{feature}</label><select class="form-select" id="{feature}" name="{feature}" required>{options}</select></div>'
         else:
-            placeholder_text = f"e.g., {numerical_ranges.get(feature, ('Enter', 'Value'))[0] if isinstance(numerical_ranges.get(feature, ('Enter', 'Value')), tuple) else numerical_ranges.get(feature, 'Enter Value')}" if feature in numerical_ranges else f"Enter {feature}"
+            # Modified placeholder_text to show the range for numerical features
+            if feature in numerical_ranges:
+                min_val, max_val = numerical_ranges[feature]
+                if feature == "No. of previous abortion":
+                    placeholder_text = f"e.g. {min_val} - {max_val}"
+                else:
+                    placeholder_text = f"e.g. {min_val:.2f} - {max_val:.2f}"
+            else:
+                placeholder_text = f"Enter {feature}"
             form_fields += f'<div class="{col_class}"><label for="{feature}">{feature}</label><input type="text" class="form-control" id="{feature}" name="{feature}" required placeholder="{placeholder_text}"></div>'
 
-    form_fields += '</div>' # Close the last row
+    form_fields += '</div>'  # Close the last row
 
     return render_template('genome-patient-info-form.html', form_fields=form_fields)
 
