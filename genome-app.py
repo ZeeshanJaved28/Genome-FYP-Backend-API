@@ -2,10 +2,8 @@ from flask import Flask, render_template, request, redirect, render_template_str
 import joblib
 import numpy as np
 import pandas as pd
-from pyngrok import ngrok
 from sklearn.preprocessing import MinMaxScaler
 import json
-import gdown
 import pickle
 import gzip
 import os
