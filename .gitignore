@@ -1,4 +1,6 @@
 .venv/
 models/*.pkl
 models/*.pkl.gz
+!models/Genetic_Disorder_Stacked_Model.pkl.gz
 models/*.pkl.xz
+!models/Disorder_Subclass_Stacked_Model.pkl.xz
