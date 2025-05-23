@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 # Load your trained models (replace with your actual paths)
 genetic_disorder_model = joblib.load('models\\Genetic_Disorder_Stacked_Model.pkl.gz')
-disorder_subclass_model = joblib.load('models\\Disorder_Subclass_Stacked_Model.pkl.gz')
-combined_disorder_model = joblib.load('models\\Combined_Genome_Disorder_Stacked_Model.pkl.gz')
+disorder_subclass_model = joblib.load('models\\Disorder_Subclass_Stacked_Model.pkl.xz')
+combined_disorder_model = joblib.load('models\\Combined_Genome_Disorder_Stacked_Model.pkl.xz')
 
 # Features lists for each model (in the order they were trained)
 features_genetic = [
