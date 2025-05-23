@@ -4,47 +4,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import json
-import pickle
-import gzip
-import os
 
 app = Flask(__name__)
-
-# MODEL_DIR = "models"
-# input_files = [
-#     "Genetic_Disorder_Stacked_Model.pkl",
-#     "Disorder_Subclass_Stacked_Model.pkl",
-#     "Combined_Genome_Disorder_Stacked_Model.pkl"
-# ]
-# output_files = [
-#     "Genetic_Disorder_Stacked_Model.pkl.gz",
-#     "Disorder_Subclass_Stacked_Model.pkl.gz",
-#     "Combined_Genome_Disorder_Stacked_Model.pkl.gz"
-# ]
-
-# for input_file, output_file in zip(input_files, output_files):
-#     input_path = os.path.join(MODEL_DIR, input_file)
-#     output_path = os.path.join(MODEL_DIR, output_file)
-#     model = joblib.load(input_path)
-#     with gzip.open(output_path, "wb") as f:
-#         pickle.dump(model, f)
-#     print(f"Compressed {input_file} to {output_file}. New size: {os.path.getsize(output_path) / (1024**2):.2f} MB")
-
-# def load_models():
-#     try:
-#         with gzip.open(os.path.join(MODEL_DIR, "Genetic_Disorder_Stacked_Model.pkl.gz"), "rb") as f:
-#             genetic_disorder_model = pickle.load(f)
-#         with gzip.open(os.path.join(MODEL_DIR, "Disorder_Subclass_Stacked_Model.pkl.gz"), "rb") as f:
-#             disorder_subclass_model = pickle.load(f)
-#         with gzip.open(os.path.join(MODEL_DIR, "Combined_Genome_Disorder_Stacked_Model.pkl.gz"), "rb") as f:
-#             combined_disorder_model = pickle.load(f)
-#         return genetic_disorder_model, disorder_subclass_model, combined_disorder_model
-#     except FileNotFoundError as e:
-#         raise Exception(f"Model file not found: {e}")
-#     except Exception as e:
-#         raise Exception(f"Error loading models: {e}")
-
-# genetic_disorder_model, disorder_subclass_model, combined_disorder_model = load_models()
 
 # Load your trained models (replace with your actual paths)
 genetic_disorder_model = joblib.load('models\\Genetic_Disorder_Stacked_Model.pkl.gz')
