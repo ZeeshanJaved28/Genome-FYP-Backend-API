@@ -4,13 +4,31 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import json
+import gdown
+import os
 
 app = Flask(__name__)
 
+# Define paths for local models
+genetic_disorder_model_path = 'models/Genetic_Disorder_Stacked_Model.pkl.gz'
+disorder_subclass_model_path = 'models/Disorder_Subclass_Stacked_Model.pkl.xz'
+combined_disorder_model_path = 'models/Combined_Genome_Disorder_Stacked_Model.pkl.xz'
+
+# Download Combined_Genome_Disorder_Stacked_Model from Google Drive
+if not os.path.exists(combined_disorder_model_path):
+    os.makedirs('models', exist_ok=True)
+    google_drive_url = 'https://drive.google.com/file/d/18pOKuaUuUzYuo89VxRnIkdzfh64or6hY/view?usp=drive_link'  # Replace with your Google Drive shareable link
+    gdown.download(google_drive_url, combined_disorder_model_path, quiet=False)
+
+# Load models
+genetic_disorder_model = joblib.load(genetic_disorder_model_path)
+disorder_subclass_model = joblib.load(disorder_subclass_model_path)
+combined_disorder_model = joblib.load(combined_disorder_model_path)
+
 # Load your trained models (replace with your actual paths)
-genetic_disorder_model = joblib.load('models\\Genetic_Disorder_Stacked_Model.pkl.gz')
-disorder_subclass_model = joblib.load('models\\Disorder_Subclass_Stacked_Model.pkl.xz')
-combined_disorder_model = joblib.load('models\\Combined_Genome_Disorder_Stacked_Model.pkl.xz')
+# genetic_disorder_model = joblib.load('models\\Genetic_Disorder_Stacked_Model.pkl.gz')
+# disorder_subclass_model = joblib.load('models\\Disorder_Subclass_Stacked_Model.pkl.xz')
+# combined_disorder_model = joblib.load('models\\Combined_Genome_Disorder_Stacked_Model.pkl.xz')
 
 # Features lists for each model (in the order they were trained)
 features_genetic = [
