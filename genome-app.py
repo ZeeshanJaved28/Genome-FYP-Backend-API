@@ -17,8 +17,8 @@ combined_disorder_model_path = 'models/Combined_Genome_Disorder_Stacked_Model.pk
 # Download Combined_Genome_Disorder_Stacked_Model from Google Drive
 if not os.path.exists(combined_disorder_model_path):
     os.makedirs('models', exist_ok=True)
-    google_drive_url = 'https://drive.google.com/file/d/18pOKuaUuUzYuo89VxRnIkdzfh64or6hY/view?usp=drive_link'  # Replace with your Google Drive shareable link
-    gdown.download(google_drive_url, combined_disorder_model_path, quiet=False)
+    google_drive_url = 'https://drive.google.com/uc?id=18pOKuaUuUzYuo89VxRnIkdzfh64or6hY'  # Replace with your Google Drive shareable link
+    gdown.download(google_drive_url, combined_disorder_model_path, quiet=False, fuzzy=True)
 
 # Load models
 genetic_disorder_model = joblib.load(genetic_disorder_model_path)
