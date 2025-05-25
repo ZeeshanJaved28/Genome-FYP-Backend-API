@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import json
-from pyngrok import ngrok
+#from pyngrok import ngrok
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes to allow Flutter requests
@@ -596,21 +596,22 @@ def chatbot():
 
 # Run Server (remains the same)
 if __name__ == "__main__":
-    try:
-        # Prompt for ngrok auth token
-        NGROK_AUTH_TOKEN = input("Please enter your ngrok auth token: ").strip()
-        if not NGROK_AUTH_TOKEN:
-            print("Error: No auth token provided. Get your token from https://dashboard.ngrok.com/")
-            exit(1)
+    app.run(port=5000, host='0.0.0.0')
+    # try:
+    #     # Prompt for ngrok auth token
+    #     NGROK_AUTH_TOKEN = input("Please enter your ngrok auth token: ").strip()
+    #     if not NGROK_AUTH_TOKEN:
+    #         print("Error: No auth token provided. Get your token from https://dashboard.ngrok.com/")
+    #         exit(1)
         
-        # Set ngrok auth token
-        ngrok.set_auth_token(NGROK_AUTH_TOKEN)
+    #     # Set ngrok auth token
+    #     ngrok.set_auth_token(NGROK_AUTH_TOKEN)
         
-        # Start ngrok tunnel
-        public_url = ngrok.connect(5000)
-        print(" * Ngrok Public URL:", public_url)
+    #     # Start ngrok tunnel
+    #     public_url = ngrok.connect(5000)
+    #     print(" * Ngrok Public URL:", public_url)
         
-        # Start Flask server
-        app.run(port=5000, host='0.0.0.0')
-    except Exception as e:
-        print(f"Error starting ngrok or Flask server: {e}")
+    #     # Start Flask server
+    #     app.run(port=5000, host='0.0.0.0')
+    # except Exception as e:
+    #     print(f"Error starting ngrok or Flask server: {e}")
