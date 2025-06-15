@@ -8,6 +8,7 @@ models/*.pkl.xz
 # Explicitly include specific model files
 !models/Genetic_Disorder_Stacked_Model.pkl.gz
 !models/Disorder_Subclass_Stacked_Model.pkl.xz
+!models/Combined_Genome_Disorder_Stacked_Model.pkl.xz
 
 # Other common ignores
 __pycache__/
