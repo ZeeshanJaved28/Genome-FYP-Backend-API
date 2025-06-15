@@ -1,1 +1,1 @@
-web: gunicorn genome-app:app
+web: gunicorn app:app
