@@ -4,7 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: #f0f0f0; /* Fallback background */
   flex-direction: column; /* To stack loading text and gene vertically */
 }

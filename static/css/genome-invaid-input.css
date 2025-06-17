@@ -3,7 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%; /* Change this line */
   background-position: center;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
