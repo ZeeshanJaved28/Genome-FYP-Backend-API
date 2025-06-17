@@ -93,8 +93,25 @@ form {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .card {
-    max-width: 90%;
-    width: 400px;
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .radio-group {
+    width: 70%;
+  }
+
+  .radio-group label {
+    font-size: 1.1rem;
+  }
+
+  .btn.btn-primary {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.5rem;
   }
 }
 
@@ -102,6 +119,36 @@ form {
   .card {
     max-width: 90%;
     width: 400px;
+  }
+}
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .card {
+    width: 95%;
+    margin-bottom: -30px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .radio-group {
+    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .radio-group label {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .btn.btn-primary {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
   }
 }
 
@@ -120,5 +167,46 @@ form {
 
   .radio-group label {
     width: 95%; /* Give label more width */
+  }
+}
+
+/* Very Small Devices (max-width: 360px) */
+@media (max-width: 360px) {
+  .radio-group {
+    width: 100%;
+  }
+
+  .radio-group label {
+    font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .btn.btn-primary {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large screens (min-width: 1440px) */
+@media (min-width: 1440px) {
+  .card {
+    width: 500px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .radio-group label {
+    font-size: 1.3rem;
+  }
+
+  .btn.btn-primary {
+    font-size: 1.1rem;
+    padding: 0.8rem 2.5rem;
   }
 }
