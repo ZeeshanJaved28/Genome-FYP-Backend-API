@@ -8,72 +8,73 @@ body {
   justify-content: center; /* Horizontally center content */
   align-items: center; /* Vertically center content */
   margin: 1rem;
+  box-sizing: border-box; /* Add this for consistent padding/margins */
 }
 
 .container {
-  max-width: 1500px; /* Thoda kam width for the form container */
+  max-width: 1500px;
+  width: 100%; /* Ensure container takes full width on smaller screens */
+  padding: 0 1rem; /* Add some horizontal padding */
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.8); /* Halka transparent white background */
-  border-radius: 2rem; /* More rounded corners */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
-  border: none; /* Remove default border */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border: none;
   margin-bottom: -50px;
-  overflow: hidden; /* For rounded corners of header */
+  overflow: hidden;
+  width: 100%; /* Ensure card takes full width */
 }
 
 .card-header {
-  background-color: #007bff96; /* Blue background for the header */
+  background-color: #007bff96;
   color: white;
-  border-radius: 15px 15px 0 0; /* Rounded corners for top of header */
-  padding: 1px;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
-  text-align: center; /* Center the header text */
+  padding: 1rem; /* Increase padding for better readability */
+  text-align: center;
 }
 
 .card-header h3 {
-  margin-bottom: 20px;
+  margin-bottom: 1rem; /* Adjusted margin */
   font-size: 1.75rem;
   font-weight: bold;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Thoda kam gap */
-  padding: 50px 50px 50px 50px;
+  gap: 1rem; /* Reduced gap for smaller screens */
+  padding: 2rem; /* Adjusted padding */
 }
 
 .mb-3 {
-  margin-bottom: 1rem; /* Adjusted margin */
-  display: flex; /* Make mb-3 a flex container */
-  justify-content: center; /* Center content horizontally */
-  flex-direction: column; /* Stack label and input */
-  align-items: center; /* Center items horizontally */
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-label {
   display: block;
-  margin-bottom: 0.5rem; /* Adjusted margin */
+  margin-bottom: 0.5rem;
   font-weight: bold;
   color: #007bff96;
-  font-size: 1.2rem;
-  text-align: center; /* Center the label text */
+  font-size: 1.1rem; /* Slightly smaller font size for labels */
+  text-align: center;
 }
 
 .form-control {
   display: block;
-  width: auto;
-  padding: 0.5rem 1rem;
+  width: 100%; /* Make input take full width */
+  max-width: 400px; /* Limit max-width for aesthetic purposes */
+  padding: 0.75rem 1rem; /* Increased padding for better touch targets */
   font-size: 1rem;
   line-height: 1.5;
   color: #34495e;
-  background-color: #f8f9fa; /* Light grey background for input */
+  background-color: #f8f9fa;
   background-clip: padding-box;
   border: 1px solid #ceceda;
   border-radius: 0.3rem;
@@ -83,61 +84,66 @@ body {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff96; /* Blue background for the header */
-  border-color: #007bff96; /* Blue background for the header */
+  background-color: #007bff96;
+  border-color: #007bff96;
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
   border-radius: 0.3rem;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  margin-top: 2rem; /* Add some space above the button */
+  margin-top: 2rem;
   font-weight: bold;
   margin-bottom: -2rem;
+  width: auto; /* Allow button to shrink with content */
+  align-self: center; /* Center the button in the flex container */
 }
 
 .btn-primary:hover {
-  background-color: #0056b3; /* Darker background color on hover */
+  background-color: #0056b3;
 }
 
 #preview-section {
   margin-top: 3rem;
   text-align: center;
-  background-color: #ffffff; /* Light background for preview section */
-  padding: 20px;
+  background-color: #ffffff;
+  padding: 1.5rem; /* Adjusted padding */
   border-radius: 0.5rem;
   border: 1px solid #007bff96;
+  overflow-x: auto; /* Allow horizontal scroll if content overflows */
 }
 
 #preview-section h4 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Adjusted margin */
   color: #007bff96;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.15rem; /* Slightly smaller font size */
 }
 
 #data-table-container {
-  overflow-x: auto; /* Keep horizontal scroll */
+  overflow-x: auto; /* Keep horizontal scroll for tables */
   border: 1px solid #ddd;
   margin-bottom: 1.5rem;
   border-radius: 0.3rem;
   background-color: #fff;
-  width: 100%; /* Ensure container takes full width */
+  width: 100%;
 }
 
 #data-table-container table {
-  width: auto; /* Table takes width based on content */
+  width: 100%; /* Make table take full width of its container */
   border-collapse: collapse;
+  min-width: 600px; /* Ensure table doesn't get too narrow on small screens, allowing scroll */
 }
 
 #data-table-container th,
 #data-table-container td {
   border: 1px solid #007bff96;
-  padding: 0.75rem;
+  padding: 0.6rem; /* Slightly reduced padding */
   text-align: left;
-  white-space: nowrap; /* Prevent text wrapping in cells */
+  white-space: nowrap;
   background-color: #e1ebff;
   color: #34495e;
   font-weight: bold;
+  font-size: 0.9rem; /* Slightly smaller font size for table content */
 }
 
 #data-table-container th {
@@ -148,8 +154,8 @@ body {
 
 .btn-success {
   color: #fff;
-  background-color: #007bff96; /* Blue background for the header */
-  border-color: #007bff96; /* Blue background for the header */
+  background-color: #007bff96;
+  border-color: #007bff96;
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
   border-radius: 0.3rem;
@@ -157,10 +163,12 @@ body {
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   margin-top: 1rem;
   font-weight: bold;
+  width: auto; /* Allow button to shrink with content */
+  align-self: center; /* Center the button in the flex container */
 }
 
 .btn-success:hover {
-  background-color: #0056b3; /* Darker background color on hover */
+  background-color: #0056b3;
 }
 
 #error-message {
@@ -172,4 +180,141 @@ body {
   border-radius: 0.3rem;
   font-weight: bold;
   text-align: center;
+  word-wrap: break-word; /* Allow long error messages to wrap */
+}
+
+/* For screens smaller than 768px (common for tablets and phones) */
+@media (max-width: 768px) {
+  body {
+    margin: 0.5rem; /* Reduced margin */
+  }
+
+  .card {
+    margin-bottom: -20px; /* Adjust margin for smaller screens */
+    border-radius: 1rem; /* Slightly less rounded corners */
+  }
+
+  .card-header {
+    padding: 0.75rem; /* Reduced padding */
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .card-header h3 {
+    font-size: 1.5rem; /* Smaller font size for header */
+  }
+
+  .card-body {
+    padding: 1.5rem; /* Reduced padding */
+    gap: 0.75rem; /* Reduced gap */
+  }
+
+  .form-label {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .form-control {
+    padding: 0.6rem 0.8rem; /* Reduced padding */
+    font-size: 0.95rem; /* Slightly smaller font size */
+  }
+
+  .btn-primary,
+  .btn-success {
+    padding: 0.6rem 1.2rem; /* Reduced padding */
+    font-size: 1rem; /* Smaller font size */
+    margin-top: 1.5rem; /* Adjusted margin */
+    margin-bottom: -1.5rem; /* Adjusted margin */
+  }
+
+  #preview-section {
+    margin-top: 2rem; /* Adjusted margin */
+    padding: 1rem; /* Reduced padding */
+  }
+
+  #preview-section h4 {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  #data-table-container table {
+    min-width: 450px; /* Further reduce min-width for smaller screens */
+  }
+
+  #data-table-container th,
+  #data-table-container td {
+    padding: 0.5rem; /* Reduced padding */
+    font-size: 0.85rem; /* Smaller font size */
+  }
+
+  #error-message {
+    padding: 0.6rem 1rem; /* Reduced padding */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+}
+
+/* For even smaller screens (e.g., mobile portrait) */
+@media (max-width: 480px) {
+  body {
+    margin: 0.5rem;
+  }
+
+  .card {
+    border-radius: 0.75rem; /* Even less rounded corners */
+    margin-bottom: -10px; /* Further adjust margin */
+  }
+
+  .card-header {
+    padding: 0.5rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+  }
+
+  .card-header h3 {
+    font-size: 1.3rem; /* Even smaller font size */
+  }
+
+  .card-body {
+    padding: 1rem; /* Further reduced padding */
+    gap: 0.5rem; /* Further reduced gap */
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary,
+  .btn-success {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+  }
+
+  #preview-section {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+  }
+
+  #preview-section h4 {
+    font-size: 0.95rem;
+  }
+
+  #data-table-container table {
+    min-width: 350px; /* Adjust min-width for very small screens */
+  }
+
+  #data-table-container th,
+  #data-table-container td {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  #error-message {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
 }
